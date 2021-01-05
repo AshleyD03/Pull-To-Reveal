@@ -6,36 +6,114 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     overflow-x: hidden;
-    background-color: #FFEBCD;
+    scroll-behavior: unset;
+    background-color: #1C1C1C;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    color: #FFF2DF;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0.5rem;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
 }
 
 #container {
     position: absolute;
+    z-index: 2;
     overflow-x: hidden;
     width: 100%;
     height: max-content;
     background: rgba(61, 59, 59, 0.71);
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(7px);
-    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+
+#content {
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 #hidden {
-    margin: 0% 5% 0.5rem 5%;
-    padding: 1rem;
-    height: calc(100vh - 2.5rem);
-    width: 80%;
-    background: rgba(227, 211, 162, 0.71);
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(7px);
+    margin: 0% 5% 0% 5%;
+    height: calc(100vh);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 #touch {
-    min-height: 3rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFF2DF;
+    padding: 0.5rem 0.8rem 0rem 0.8rem;
+}
+
+#hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+}
+
+#hamburger span {
+    display: block;
+    width: 1.8rem;
+    height: 15%;
+    margin-top: 0.2rem;
+    opacity: 0.75;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(7px);
+    border-radius: 1px;
+}
+
+#hamburger span:nth-child(1) {
+    margin-top: 0rem;
+    background-color: #86B6E2;
+}
+
+#hamburger span:nth-child(2) {
+    background-color: #EC9F9F;
+}
+
+#hamburger span:nth-child(3) {
+    background-color: #FFC266;
+}
+
+#navspace {
+    display: block;
+    background-color: inherit;
+}
+
+#title {
+    
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#basket {
+    height: 50%;
+}
+
+#intro {
+    transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slide {
+    margin: 1rem;
+}
+
+.slide h4 {
+    font-size: 1.2rem;
 }

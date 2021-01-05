@@ -67,24 +67,8 @@ touch.addEventListener('touchend', e => {
         let touch = touches[i]
         let id = touch.identifier;
         if (ongoingTouches.some(tch => tch.identifier === id)) {
-            let dif = (curY - minY) / (maxY - minY)
-            let duration = 1000 * (- Math.abs(dif - 0.5) + 0.5)
-            /* 
-            Absolute Method :
-             y = - |x - 0.5| + 0.5 
-               or
-             - Math.abs(dif - 0.5) + 0.5
-
-            Quadratic Method : 
-             y = 2 * (x - 0.5)^2 + 0.5
-               or
-             -2 * (dif - 0.5) ** 2 + 0.5
-
-            Quadratic Squish Method :
-             y = 0.9 * (x - 0.5) + 0.325
-               or
-             -0.9 * (dif - 0.5) ** 2 + 0.325
-            */
+            let duration = 1000 * (- Math.abs((curY - minY) / (maxY - minY) - 0.5) + 0.5)
+        
             let options = {
                 duration: duration,
                 easing: 'cubic-bezier(0.39, 0.575, 0.565, 1)'       
@@ -125,3 +109,6 @@ function animateTo(element, keyframes, options) {
     });
     return anim
 }
+
+// Space out where nav would be on z-index 1 
+document.getElementById('nav-space').style.height = `${touch.clientHeight}px`;
